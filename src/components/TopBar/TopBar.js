@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import { TbCalculator } from "react-icons/tb";
 import { FaUserCircle, FaInfoCircle } from "react-icons/fa";
 // import { useNavigate } from "react-router-dom";
 import { LOGIN_ROUTE, MAIN_ROUTE } from "../../routeConst/routeConst";
@@ -18,19 +19,18 @@ const TopBar = observer(() => {
   }
 
   return (
-    <Navbar
-      bg="dark"
-      variant="dark"
-      className="nav"
-      // style={{ height: 60, backgroundColor: "brown !important" }}
-    >
+    <Navbar bg="dark" variant="dark" className="nav">
       <Container className="">
         <NavLink
           to={MAIN_ROUTE}
           className="text-decoration-none"
-          style={{ color: "white", fontSize: 25 }}
+          style={{ color: "white", fontSize: 22 }}
         >
-          TEST CALC
+          <div>
+            {" "}
+            <TbCalculator size="25" className="me-2 mb-1" style={{}} />
+            TEST CALC
+          </div>
         </NavLink>
 
         <Nav className="">
