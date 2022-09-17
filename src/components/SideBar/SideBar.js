@@ -10,7 +10,7 @@ const SideBar = () => {
         className="pt-4 pb-4 sideBar"
         style={{ textAlign: "center" }}
       >
-        Навигация
+        Навигация <br /> тест
       </Paper>
     </div>
   );
