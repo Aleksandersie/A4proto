@@ -12,7 +12,7 @@ const PrintCutCard = () => {
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia component="img" height="140" image={img} alt="green iguana" />
       <CardContent style={{ textAlign: "center" }}>
-        <h4>Интерьерная печать</h4>
+        <h4>Цифровая печать</h4>
         <p></p>
         <Button variant="warning" onMouseEnter={test}>
           Выбрать
