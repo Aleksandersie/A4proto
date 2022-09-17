@@ -3,16 +3,20 @@ import { Button } from "react-bootstrap";
 import { Card, CardContent, CardMedia } from "@mui/material";
 
 const PrintCutCard = () => {
+  const test = () => {
+    setTimeout(() => {
+      console.log("Done");
+    }, 1000);
+  };
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia component="img" height="140" image={img} alt="green iguana" />
       <CardContent style={{ textAlign: "center" }}>
         <h4>Интерьерная печать</h4>
-        <p>
-          Интерьерная широкоформатная печать подходит для декорирования и
-          брендирования помещений, рекламных конструкций.
-        </p>
-        <Button variant="warning">Выбрать</Button>
+        <p></p>
+        <Button variant="warning" onMouseEnter={test}>
+          Выбрать
+        </Button>
       </CardContent>
     </Card>
   );
