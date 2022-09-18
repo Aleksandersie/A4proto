@@ -1,7 +1,7 @@
 import React from "react";
 import { Paper } from "@mui/material";
 import { Row, Col } from "react-bootstrap";
-import TypeCard from "./PrintCutCard/TypeCard";
+import TypeCard from "./TypeCard/TypeCard";
 import { INT_PRINT } from "../../routeConst/routeConst";
 
 const CategoryCard = () => {
