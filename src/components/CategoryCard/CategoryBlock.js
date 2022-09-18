@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import TypeCard from "./TypeCard/TypeCard";
 import { INT_PRINT } from "../../routeConst/routeConst";
 
-const CategoryCard = () => {
+const CategoryBlock = () => {
   const category = [
     {
       name: "Интерьерная печать",
@@ -38,4 +38,4 @@ const CategoryCard = () => {
   );
 };
 
-export default CategoryCard;
+export default CategoryBlock;

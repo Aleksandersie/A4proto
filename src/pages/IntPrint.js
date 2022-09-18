@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import SideBar from "../components/SideBar/SideBar";
 import TopStepper from "../components/TopStepper/TopStepper";
 import TopBreadCrumbs from "../components/TopBreadCrumbs/TopBreadCrumbs";
-import CategoryCard from "../components/CategoryCard/CategoryCard";
+import CategoryBlock from "../components/CategoryCard/CategoryBlock";
 
 const IntPrint = () => {
   return (
