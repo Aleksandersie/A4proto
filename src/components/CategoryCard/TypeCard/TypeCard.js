@@ -20,7 +20,13 @@ const TypeCard = ({ name, path, imgLink }) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }} onMouseEnter={add} onMouseLeave={out}>
+    <Card
+      sx={{ maxWidth: 345 }}
+      onMouseEnter={add}
+      onMouseLeave={out}
+      style={{ minHeight: 282 }}
+      variant="outlined"
+    >
       <CardMedia
         component="img"
         height="140"
