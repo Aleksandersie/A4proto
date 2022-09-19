@@ -5,8 +5,10 @@ import TopStepper from "../components/TopStepper/TopStepper";
 import TopBreadCrumbs from "../components/TopBreadCrumbs/TopBreadCrumbs";
 import CategoryBlock from "../components/CategoryCard/CategoryBlock";
 import TypeBlock from "../components/TypeBlock/TypeBlock";
-
+import { useLocation } from "react-router-dom";
 const IntPrint = () => {
+  const location = useLocation();
+  console.log(location);
   return (
     <Container>
       <Row>

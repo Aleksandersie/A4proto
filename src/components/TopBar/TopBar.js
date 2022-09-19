@@ -44,7 +44,7 @@ const TopBar = observer(() => {
               Помощь
             </Button>
           </NavLink>
-          {/*{user.isAuth ? (*/}
+          {/* {user.isAuth ? (*/}
           {/*  <NavLink to={LOGIN_ROUTE}>*/}
           {/*    <Button onClick={logIn} variant="warning">*/}
           {/*      Авторизация*/}
@@ -56,7 +56,7 @@ const TopBar = observer(() => {
           {/*      123*/}
           {/*    </Button>*/}
           {/*  </NavLink>*/}
-          {/*)}*/}
+          {/*)} */}
         </Nav>
       </Container>
     </Navbar>
