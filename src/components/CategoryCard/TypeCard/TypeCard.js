@@ -34,7 +34,7 @@ const TypeCard = ({ name, path, imgLink }) => {
         alt="green iguana"
       />
       <CardContent style={{ textAlign: "center" }}>
-        <h6 style={{ fontSize: 17 }}>{name}</h6>
+        <h6 style={{ fontSize: 15 }}>{name}</h6>
         {/* <p>{text}</p> */}
         <NavLink to={path}>
           <Button variant="warning" className="mt-5">

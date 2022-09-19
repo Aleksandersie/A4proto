@@ -3,6 +3,7 @@ import { Button, Col, Form, FormControl, Row } from "react-bootstrap";
 import startTest from "../../calcLogic/calc";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../index";
+import { TextField } from "@mui/material";
 
 const CalcInputBlock = observer(() => {
   const [width, setWidth] = useState(0);
@@ -30,10 +31,19 @@ const CalcInputBlock = observer(() => {
             <h6 className="m-auto" style={{ textAlign: "center" }}>
               {"Длина"}
             </h6>
-            <Form.Control
-              className="mt-2"
-              placeholder="Введите длину"
+            {/*<Form.Control*/}
+            {/*  className="mt-2"*/}
+            {/*  placeholder="Введите длину"*/}
+            {/*  type="number"*/}
+            {/*  value={width}*/}
+            {/*  onChange={(e) => setWidth(e.target.value)}*/}
+            {/*/>*/}
+            <TextField
+              className="mt-3"
+              id="standard-basic"
+              label="Введите длину"
               type="number"
+              variant="standard"
               value={width}
               onChange={(e) => setWidth(e.target.value)}
             />
@@ -42,10 +52,19 @@ const CalcInputBlock = observer(() => {
             <h6 className="m-auto" style={{ textAlign: "center" }}>
               {"Ширина"}
             </h6>
-            <Form.Control
-              className="mt-2"
-              placeholder="Введите ширину"
+            {/*<Form.Control*/}
+            {/*  className="mt-2"*/}
+            {/*  placeholder="Введите ширину"*/}
+            {/*  type="number"*/}
+            {/*  value={height}*/}
+            {/*  onChange={(e) => setHeight(e.target.value)}*/}
+            {/*/>*/}
+            <TextField
+              className="mt-3"
+              id="standard-basic"
+              label="Введите ширину"
               type="number"
+              variant="standard"
               value={height}
               onChange={(e) => setHeight(e.target.value)}
             />
@@ -54,10 +73,19 @@ const CalcInputBlock = observer(() => {
             <h6 className="m-auto" style={{ textAlign: "center" }}>
               {"Количество"}
             </h6>
-            <Form.Control
-              className="mt-2"
-              placeholder="Введите количество"
+            {/*<Form.Control*/}
+            {/*  className="mt-2"*/}
+            {/*  placeholder="Введите количество"*/}
+            {/*  type="number"*/}
+            {/*  value={count}*/}
+            {/*  onChange={(event) => setCount(Number(event.target.value))}*/}
+            {/*/>*/}
+            <TextField
+              className="mt-3"
+              id="standard-basic"
+              label="Введите количество"
               type="number"
+              variant="standard"
               value={count}
               onChange={(event) => setCount(Number(event.target.value))}
             />
