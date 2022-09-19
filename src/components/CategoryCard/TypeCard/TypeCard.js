@@ -11,19 +11,19 @@ const TypeCard = ({ name, path, imgLink }) => {
       console.log("Done");
     }, 1000);
   };
-  const [text, setText] = useState("");
-  const add = () => {
-    setText("qwerty");
-  };
-  const out = () => {
-    setText("");
-  };
+  // const [text, setText] = useState("");
+  // const add = () => {
+  //   setText("qwerty");
+  // };
+  // const out = () => {
+  //   setText("");
+  // };
 
   return (
     <Card
       sx={{ maxWidth: 345 }}
-      onMouseEnter={add}
-      onMouseLeave={out}
+      // onMouseEnter={add}
+      // onMouseLeave={out}
       style={{ minHeight: 282 }}
       variant="outlined"
     >
@@ -34,10 +34,12 @@ const TypeCard = ({ name, path, imgLink }) => {
         alt="green iguana"
       />
       <CardContent style={{ textAlign: "center" }}>
-        <h5>{name}</h5>
-        <p>{text}</p>
+        <h6 style={{ fontSize: 17 }}>{name}</h6>
+        {/* <p>{text}</p> */}
         <NavLink to={path}>
-          <Button variant="warning">Выбрать</Button>
+          <Button variant="warning" className="mt-5">
+            Выбрать
+          </Button>
         </NavLink>
       </CardContent>
     </Card>
