@@ -2,7 +2,7 @@ import React from "react";
 import { Paper } from "@mui/material";
 import { Row, Col } from "react-bootstrap";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { INT_PRINT } from "../../routeConst/routeConst";
+import { INT_PRINT, INT_PRINT_CALC } from "../../routeConst/routeConst";
 import TypeCard from "../CategoryCard/TypeCard/TypeCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -10,7 +10,7 @@ const TypeBlock = () => {
   const category = [
     {
       name: "Интерьерная печать",
-      path: INT_PRINT,
+      path: INT_PRINT_CALC,
       imgLink:
         "https://a4-yug.ru/wp-content/uploads/2020/10/IMG_7252-scaled-e1603785789466.jpg"
     },

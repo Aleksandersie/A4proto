@@ -3,7 +3,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import SideBar from "../components/SideBar/SideBar";
 import TopStepper from "../components/TopStepper/TopStepper";
 import TopBreadCrumbs from "../components/TopBreadCrumbs/TopBreadCrumbs";
-import CategoryBlock from "../components/CategoryCard/CategoryBlock";
 import TypeBlock from "../components/TypeBlock/TypeBlock";
 import { useLocation } from "react-router-dom";
 const IntPrint = () => {
