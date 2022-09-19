@@ -1,26 +1,29 @@
 import React from "react";
 import { Breadcrumbs, Typography, Link } from "@mui/material";
+import { NavLink } from "react-router-dom";
+import { MAIN_ROUTE } from "../../routeConst/routeConst";
 
 const TopBreadCrumbs = () => {
   return (
     <Breadcrumbs aria-label="breadcrumb" className="mt-4 ms-4">
-      <Link underline="hover" color="inherit" href="/">
+      <NavLink
+        to={MAIN_ROUTE}
+        style={{ textDecoration: "none", color: "gray" }}
+      >
         Категории работ
-      </Link>
-      <Link
-        underline="hover"
-        color="inherit"
-        href="/material-ui/getting-started/installation/"
+      </NavLink>
+      <NavLink
+        to={MAIN_ROUTE}
+        style={{ textDecoration: "none", color: "gray" }}
       >
         Тип работ
-      </Link>
-      <Link
-        underline="hover"
-        color="inherit"
-        href="/material-ui/getting-started/installation/"
+      </NavLink>
+      <NavLink
+        to={MAIN_ROUTE}
+        style={{ textDecoration: "none", color: "gray" }}
       >
         Параметры заказа
-      </Link>
+      </NavLink>
     </Breadcrumbs>
   );
 };
