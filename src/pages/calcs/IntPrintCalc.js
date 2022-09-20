@@ -3,9 +3,10 @@ import SideBar from "../../components/SideBar/SideBar";
 import TopStepper from "../../components/TopStepper/TopStepper";
 import TopBreadCrumbs from "../../components/TopBreadCrumbs/TopBreadCrumbs";
 import CategoryBlock from "../../components/CategoryCard/CategoryBlock";
-import React from "react";
+import React, { useContext } from "react";
 import CalcBlock from "../../components/CalcBlock/CaclBlock";
 import OrderListBlock from "../../components/OrderListBlock/OrderListBlock";
+import { Context } from "../../index";
 
 const IntPrintCalc = () => {
   return (
