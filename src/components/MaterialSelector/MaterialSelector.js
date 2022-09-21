@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import s from "../CalcBlock/CalckBlock.module.css";
 import TypeCard from "../CategoryCard/TypeCard/TypeCard";
 import { Context } from "../../index";
@@ -20,7 +20,13 @@ const MaterialSelector = () => {
             <Card.Title></Card.Title>
             <Row className="d-flex justify-content-around">
               {materialList.list.map((l) => (
-                <Card key={l.id}>{l.name}</Card>
+                <Button
+                  key={l.id}
+                  className="mt-3"
+                  onClick={() => materialList.setSelectedMaterial(l)}
+                >
+                  {l.name}
+                </Button>
               ))}
             </Row>
           </Card.Body>

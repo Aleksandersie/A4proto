@@ -5,29 +5,36 @@ export default class MaterialStore {
     this._list = [
       {
         id: 1,
-        name: "Плёнка",
+        name: "Плёнка"
       },
       {
         id: 2,
-        name: "Баннер",
+        name: "Баннер"
       },
       {
         id: 3,
-        name: "Бумага",
+        name: "Бумага"
       },
       {
         id: 4,
-        name: "Беклит",
-      },
+        name: "Беклит"
+      }
     ];
+    this._selectedMaterial = {};
     makeAutoObservable(this);
   }
 
   setList(material) {
     this._list = material;
   }
+  setSelectedMaterial(material) {
+    this._selectedMaterial = material;
+  }
 
   get list() {
     return this._list;
+  }
+  get selectedMaterial() {
+    return this._selectedMaterial;
   }
 }
