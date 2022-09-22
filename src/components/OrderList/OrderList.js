@@ -35,7 +35,7 @@ const OrderList = ({ order }) => {
       </Col>
       <Col md={2}>
         <h6 className="m-auto" style={{ textAlign: "center" }}>
-          {"Категория заказа"}
+          {"Категория заказаТест"}
         </h6>
         <p>{order.material}</p>
       </Col>

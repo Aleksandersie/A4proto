@@ -7,20 +7,27 @@ export default class MaterialStore {
     this._list = [
       {
         id: 1,
-        name: "Плёнка",
-        path: INT_PRINT_CALC
+        name: "ПлёнкаТест",
+        path: INT_PRINT_CALC,
+        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. "
       },
       {
         id: 2,
-        name: "Баннер"
+        name: "Баннер",
+        path: INT_PRINT_CALC,
+        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. "
       },
       {
         id: 3,
-        name: "Бумага"
+        name: "Бумага",
+        path: INT_PRINT_CALC,
+        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. "
       },
       {
         id: 4,
-        name: "Беклит"
+        name: "Беклит",
+        path: INT_PRINT_CALC,
+        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. "
       }
     ];
     this._selectedMaterial = {};

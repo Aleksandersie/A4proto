@@ -18,23 +18,27 @@ const MaterialSelector = observer(() => {
               <div>Выберите материал</div>
             </div>
           </Card.Header>
-          <Card.Body>
-            <Card.Title></Card.Title>
-            <div>
-              {materialList.list.map((l) => (
-                <NavLink to={l.path}>
-                  <Button
-                    key={l.id}
-                    variant="warning"
-                    className="ms-3"
-                    disabled={l.id === materialList.selectedMaterial.id}
-                    onClick={() => materialList.setSelectedMaterial(l)}
-                  >
-                    {l.name}
-                  </Button>
-                </NavLink>
-              ))}
-            </div>
+          <Card.Body className="d-flex justify-content-around gap-2">
+            {/* <Card.Title></Card.Title> */}
+
+            {materialList.list.map((l) => (
+              <Card key={l.id}>
+                <Card.Header>{l.name}</Card.Header>
+                <Card.Body className="pt-3 m-auto">
+                  <div>{l.desc}</div>
+                  <NavLink to={l.path}>
+                    <Button
+                      variant="warning"
+                      className="mt-3"
+                      disabled={l.id === materialList.selectedMaterial.id}
+                      onClick={() => materialList.setSelectedMaterial(l)}
+                    >
+                      {l.name}
+                    </Button>
+                  </NavLink>
+                </Card.Body>
+              </Card>
+            ))}
           </Card.Body>
         </Card>
       </Container>

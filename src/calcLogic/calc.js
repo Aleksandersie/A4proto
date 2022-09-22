@@ -1,18 +1,19 @@
 const orderList = [];
 
-function startTest(width, height, description, count) {
+function startTest(width, height, description, count, material) {
   class OrderItem {
-    constructor(width, height, description, count) {
+    constructor(width, height, description, count, material) {
       this.width = width;
       this.height = height;
       this.description = description;
       this.count = count;
-      this.type = "Интерьерная печать";
-      this.material = "Плёнка";
+      // this.type = "Интерьерная печать";
+      this.material = material;
       this.random = (Math.random() * 10000).toFixed();
     }
   }
-  let order = new OrderItem(width, height, description, count);
+
+  let order = new OrderItem(width, height, description, count, material);
 
   orderList.push(order);
   return orderList;

@@ -12,11 +12,17 @@ const CalcInputBlock = observer(() => {
   const [count, setCount] = useState(0);
   const [coast, setCoast] = useState(0);
   console.log(count);
-
+  const { materialList } = useContext(Context);
   const { order } = useContext(Context);
   const { price } = useContext(Context);
   function start() {
-    let result = startTest(width, height, description, count);
+    let result = startTest(
+      width,
+      height,
+      description,
+      count,
+      materialList.selectedMaterial.name
+    );
     order.setOrder(result);
     price.setPrice(coast);
     console.log(order);
