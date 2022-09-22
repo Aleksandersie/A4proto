@@ -4,6 +4,7 @@ import s from "../CalcBlock/CalckBlock.module.css";
 import TypeCard from "../CategoryCard/TypeCard/TypeCard";
 import { Context } from "../../index";
 import { observer } from "mobx-react-lite";
+import { NavLink } from "react-router-dom";
 
 const MaterialSelector = observer(() => {
   const { materialList } = useContext(Context);
@@ -21,15 +22,17 @@ const MaterialSelector = observer(() => {
             <Card.Title></Card.Title>
             <div>
               {materialList.list.map((l) => (
-                <Button
-                  key={l.id}
-                  variant="warning"
-                  className="ms-3"
-                  disabled={l.id === materialList.selectedMaterial.id}
-                  onClick={() => materialList.setSelectedMaterial(l)}
-                >
-                  {l.name}
-                </Button>
+                <NavLink to={l.path}>
+                  <Button
+                    key={l.id}
+                    variant="warning"
+                    className="ms-3"
+                    disabled={l.id === materialList.selectedMaterial.id}
+                    onClick={() => materialList.setSelectedMaterial(l)}
+                  >
+                    {l.name}
+                  </Button>
+                </NavLink>
               ))}
             </div>
           </Card.Body>

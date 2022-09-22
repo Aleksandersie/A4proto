@@ -1,3 +1,5 @@
+import { INT_PRINT_CALC } from "../routeConst/routeConst";
+
 const { makeAutoObservable } = require("mobx");
 
 export default class MaterialStore {
@@ -5,7 +7,8 @@ export default class MaterialStore {
     this._list = [
       {
         id: 1,
-        name: "Плёнка"
+        name: "Плёнка",
+        path: INT_PRINT_CALC
       },
       {
         id: 2,
