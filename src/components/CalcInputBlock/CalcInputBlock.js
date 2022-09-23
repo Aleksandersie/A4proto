@@ -4,7 +4,7 @@ import startTest from "../../calcLogic/calc";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../index";
 import { TextField } from "@mui/material";
-import MaterialCheck from "../MaterialCheck/MaterialCheck";
+import MaterialSurfaceCheck from "../MaterialSurfaceCheck/MaterialSurfaceCheck";
 
 const CalcInputBlock = observer(() => {
   const [width, setWidth] = useState(0);
@@ -104,7 +104,7 @@ const CalcInputBlock = observer(() => {
           </Col>
         </Row>
       </Form>
-      <MaterialCheck />
+      <MaterialSurfaceCheck />
       <Row className="d-flex justify-content-center mt-5">
         <Col md={3}>
           <h6 className="m-auto" style={{ textAlign: "center" }}>
