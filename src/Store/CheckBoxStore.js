@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 
-export default class CheckBoxSrore {
+export default class CheckBoxStore {
   constructor() {
     this._lamination = false;
     this._glossy = false;
@@ -14,8 +14,8 @@ export default class CheckBoxSrore {
   get lamination() {
     return this._lamination;
   }
-  setGlossy(glossy) {
-    this._glossy = glossy;
+  setGlossy(bool) {
+    this._glossy = bool;
   }
   get glossy() {
     return this._glossy;

@@ -3,12 +3,8 @@ import { Button, Col, Form, FormControl, Row } from "react-bootstrap";
 import startTest from "../../calcLogic/calc";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../index";
-import {
-  TextField,
-  FormGroup,
-  FormControlLabel,
-  Checkbox
-} from "@mui/material";
+import { TextField } from "@mui/material";
+import MaterialCheck from "../MaterialCheck/MaterialCheck";
 
 const CalcInputBlock = observer(() => {
   const [width, setWidth] = useState(0);
@@ -108,16 +104,7 @@ const CalcInputBlock = observer(() => {
           </Col>
         </Row>
       </Form>
-      <Row className="d-flex justify-content-center mt-4 ">
-        <FormGroup className="d-flex justify-content-center flex-row ">
-          <FormControlLabel
-            control={<Checkbox defaultChecked />}
-            label="Глянецевая"
-          />
-          <FormControlLabel control={<Checkbox />} label="Матовая" />
-          <FormControlLabel control={<Checkbox />} label="Прозрачная" />
-        </FormGroup>
-      </Row>
+      <MaterialCheck />
       <Row className="d-flex justify-content-center mt-5">
         <Col md={3}>
           <h6 className="m-auto" style={{ textAlign: "center" }}>

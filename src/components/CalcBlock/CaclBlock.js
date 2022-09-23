@@ -22,7 +22,7 @@ const CalcBlock = () => {
                 fontSize: 25,
                 cursor: "pointer",
                 position: "absolute",
-                top: 10,
+                top: 10
               }}
               onClick={goBack}
             />
@@ -30,7 +30,7 @@ const CalcBlock = () => {
           </div>
         </Card.Header>
         <Card.Body>
-          <Card.Title>Введите параметры:</Card.Title>
+          <Card.Title>Введите размеры:</Card.Title>
           <CalcInputBlock />
         </Card.Body>
       </Card>
