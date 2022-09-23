@@ -1,6 +1,6 @@
 import { INT_PRINT_CALC } from "../routeConst/routeConst";
 
-const { makeAutoObservable } = require("mobx");
+import { makeAutoObservable } from "mobx";
 
 export default class MaterialStore {
   constructor() {
