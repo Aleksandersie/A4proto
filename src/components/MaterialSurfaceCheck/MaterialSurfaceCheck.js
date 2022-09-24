@@ -5,10 +5,10 @@ import { useState, useContext } from "react";
 import { Context } from "../..";
 
 const MaterialSurfaceCheck = observer(() => {
-  const [glossy, setGlossy] = useState(false);
+  const [glossy, setGlossy] = useState(true);
   const [matt, setMatt] = useState(false);
   const [transparent, setTransparent] = useState(false);
-  const [white, setWhite] = useState(false);
+  const [white, setWhite] = useState(true);
   const { checkStore } = useContext(Context);
 
   const checkGlossy = (e) => {
