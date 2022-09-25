@@ -3,10 +3,10 @@ import { makeAutoObservable } from "mobx";
 export default class CheckBoxStore {
   constructor() {
     this._lamination = false;
-    this._glossy = false;
+    this._glossy = true;
     this._matt = false;
     this._transparent = false;
-    this._white = false;
+    this._white = true;
     this._borderCut = false;
     makeAutoObservable(this);
   }

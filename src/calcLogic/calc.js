@@ -39,6 +39,7 @@ function startTest(
       this.white = white;
       this.borderCut = borderCut;
       this.random = (Math.random() * 10000).toFixed();
+      this.orderType = "Интерьерная печать";
     }
   }
 
