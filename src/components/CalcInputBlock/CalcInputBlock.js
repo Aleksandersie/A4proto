@@ -6,6 +6,7 @@ import { Context } from "../../index";
 import { TextField } from "@mui/material";
 import MaterialSurfaceCheck from "../MaterialSurfaceCheck/MaterialSurfaceCheck";
 import LaminationCheck from "../LaminationCheck/LaminationCheck";
+import BorderCutCheck from "../BorderCutCheck/BorderCutCheck";
 
 const CalcInputBlock = observer(() => {
   const [width, setWidth] = useState(0);
@@ -17,13 +18,20 @@ const CalcInputBlock = observer(() => {
   const { materialList } = useContext(Context);
   const { order } = useContext(Context);
   const { price } = useContext(Context);
+  const { checkStore } = useContext(Context);
   function start() {
     let result = startTest(
       width,
       height,
       description,
       count,
-      materialList.selectedMaterial.name
+      materialList.selectedMaterial.name,
+      checkStore.lamination,
+      checkStore.glossy,
+      checkStore.matt,
+      checkStore.transparent,
+      checkStore.white,
+      checkStore.borderCut
     );
     order.setOrder(result);
     price.setPrice(coast);
@@ -106,7 +114,11 @@ const CalcInputBlock = observer(() => {
         </Row>
       </Form>
       <MaterialSurfaceCheck />
-      <LaminationCheck />
+      <div className="d-flex justify-content-evenly">
+        <LaminationCheck />
+        <BorderCutCheck />
+      </div>
+
       <Row className="d-flex justify-content-center mt-5">
         <Col md={3}>
           <h6 className="m-auto" style={{ textAlign: "center" }}>

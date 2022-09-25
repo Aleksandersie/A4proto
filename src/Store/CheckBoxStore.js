@@ -7,6 +7,7 @@ export default class CheckBoxStore {
     this._matt = false;
     this._transparent = false;
     this._white = false;
+    this._borderCut = false;
     makeAutoObservable(this);
   }
   setLamination(bool) {
@@ -38,5 +39,11 @@ export default class CheckBoxStore {
   }
   get transparent() {
     return this._transparent;
+  }
+  setBorderCut(bool) {
+    this._borderCut = bool;
+  }
+  get borderCut() {
+    return this._borderCut;
   }
 }
