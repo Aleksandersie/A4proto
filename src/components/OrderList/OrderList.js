@@ -1,7 +1,11 @@
 import { Card, Col, Container, Form, Row, Accordion } from "react-bootstrap";
 import React from "react";
+import { AiFillDelete } from "react-icons/ai";
 
 const OrderList = ({ order }) => {
+  const removeItem = (number) => {
+    // order.setOrder(order.order.filter((or) => or.random !== number));
+  };
   return (
     // <Card
     //   className="mt-4 pb-2 pt-3 d-flex flex-row justify-content-center ms-5 me-5 shadow-sm"
@@ -72,6 +76,10 @@ const OrderList = ({ order }) => {
             <div style={{ textAlign: "center" }}>
               <h6>{"Материал"}</h6>
               <p>{order.material}</p>
+            </div>
+            <div style={{ textAlign: "center" }}>
+              <h6>{"Удалить"}</h6>
+              <AiFillDelete onClick={() => removeItem(order.random)} />
             </div>
           </Card>
         </Accordion.Header>
