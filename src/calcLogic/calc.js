@@ -1,4 +1,4 @@
-const orderList = [];
+export const orderList = [];
 
 function startTest(
   width,

@@ -13,7 +13,7 @@ const OrderListBlock = observer(() => {
       </Card.Header>
 
       {order.order.map((order) => (
-        <OrderList key={order.random} order={order} />
+        <OrderList key={order.random} orderItem={order} />
       ))}
     </Card>
   );

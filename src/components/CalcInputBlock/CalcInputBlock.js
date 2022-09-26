@@ -7,7 +7,7 @@ import { TextField } from "@mui/material";
 import MaterialSurfaceCheck from "../MaterialSurfaceCheck/MaterialSurfaceCheck";
 import LaminationCheck from "../LaminationCheck/LaminationCheck";
 import BorderCutCheck from "../BorderCutCheck/BorderCutCheck";
-
+import { orderList } from "../../calcLogic/calc";
 const CalcInputBlock = observer(() => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
@@ -17,7 +17,6 @@ const CalcInputBlock = observer(() => {
   console.log(count);
   const { materialList } = useContext(Context);
   const { order } = useContext(Context);
-  const { price } = useContext(Context);
   const { checkStore } = useContext(Context);
   function start() {
     let result = startTest(
@@ -34,9 +33,9 @@ const CalcInputBlock = observer(() => {
       checkStore.borderCut
     );
     order.setOrder(result);
-    price.setPrice(coast);
-    console.log(order);
-    console.log(price);
+    // console.log(result);
+    // console.log({ order });
+    // console.log({ orderList });
   }
 
   return (

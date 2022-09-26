@@ -1,10 +1,18 @@
 import { Card, Col, Container, Form, Row, Accordion } from "react-bootstrap";
-import React from "react";
+import React, { useContext } from "react";
 import { AiFillDelete } from "react-icons/ai";
+import { Context } from "../../index";
+import { orderList } from "../../calcLogic/calc";
 
-const OrderList = ({ order }) => {
+const OrderList = ({ orderItem }) => {
+  const { order } = useContext(Context);
+
   const removeItem = (number) => {
-    // order.setOrder(order.order.filter((or) => or.random !== number));
+    order.setOrder(order.order.filter((or) => or.random !== number));
+    let test = orderList.filter((el) => el.random !== number);
+    console.log({ order });
+    console.log({ orderList });
+    console.log(test);
   };
   return (
     // <Card
@@ -57,29 +65,29 @@ const OrderList = ({ order }) => {
           >
             <div style={{ textAlign: "center", maxWidth: 130 }}>
               <h6>{"Описание"}</h6>
-              <p>{order.description}</p>
+              <p>{orderItem.description}</p>
             </div>
             <div className="" style={{ textAlign: "center" }}>
               <h6>{"Размеры"}</h6>
               <p>
-                {order.width}x{order.height}
+                {orderItem.width}x{orderItem.height}
               </p>
             </div>
             <div style={{ textAlign: "center" }}>
               <h6>{"Количество"}</h6>
-              <p>{order.count}</p>
+              <p>{orderItem.count}</p>
             </div>
             <div style={{ textAlign: "center" }}>
               <h6>{"Категория заказа"}</h6>
-              <p>{order.orderType}</p>
+              <p>{orderItem.orderType}</p>
             </div>
             <div style={{ textAlign: "center" }}>
               <h6>{"Материал"}</h6>
-              <p>{order.material}</p>
+              <p>{orderItem.material}</p>
             </div>
             <div style={{ textAlign: "center" }}>
               <h6>{"Удалить"}</h6>
-              <AiFillDelete onClick={() => removeItem(order.random)} />
+              <AiFillDelete onClick={() => removeItem(orderItem.random)} />
             </div>
           </Card>
         </Accordion.Header>
@@ -103,19 +111,19 @@ const OrderList = ({ order }) => {
             >
               <div style={{ textAlign: "center" }}>
                 <h6>{"Обрезка в формат"}</h6>
-                <p>{order.borderCut ? "Да" : "Нет"}</p>
+                <p>{orderItem.borderCut ? "Да" : "Нет"}</p>
               </div>
               <div style={{ textAlign: "center", maxWidth: 130 }}>
                 <h6>{"Фактура пленки"}</h6>
-                <p>{order.glossy ? "Глянец" : "Мат"}</p>
+                <p>{orderItem.glossy ? "Глянец" : "Мат"}</p>
               </div>
               <div style={{ textAlign: "center", maxWidth: 130 }}>
                 <h6>{"Тип пленки"}</h6>
-                <p>{order.white ? "Белая" : "Прозрачная"}</p>
+                <p>{orderItem.white ? "Белая" : "Прозрачная"}</p>
               </div>
               <div style={{ textAlign: "center", maxWidth: 130 }}>
                 <h6>{"Ламинация"}</h6>
-                <p>{order.lamination ? "Да" : "Нет"}</p>
+                <p>{orderItem.lamination ? "Да" : "Нет"}</p>
               </div>
             </div>
             <div
