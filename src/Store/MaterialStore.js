@@ -30,7 +30,18 @@ export default class MaterialStore {
         desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. ",
       },
     ];
+    this._vinyl = [
+      { name: "Белая глянцевая пленка", brand: "OraJet 3640G", id: 1 },
+      { name: "Белая матовая пленка", brand: "OraJet 3640M", id: 2 },
+      {
+        name: "Прозрачная глянцевая пленка",
+        brand: "OraJet 3640 Clear G",
+        id: 3,
+      },
+      { name: "Белая матовая пленка", brand: "OraJet 3640 Clear M", id: 4 },
+    ];
     this._selectedMaterial = {};
+    this._selectedVinyl = {};
     makeAutoObservable(this);
   }
 
@@ -46,5 +57,17 @@ export default class MaterialStore {
   }
   get selectedMaterial() {
     return this._selectedMaterial;
+  }
+  setVinyl(vinyl) {
+    this._vinyl = vinyl;
+  }
+  get vinyl() {
+    return this._vinyl;
+  }
+  setSelectedVinyl(vinyl) {
+    this._selectedVinyl = vinyl;
+  }
+  get selectedVinyl() {
+    return this._selectedVinyl;
   }
 }

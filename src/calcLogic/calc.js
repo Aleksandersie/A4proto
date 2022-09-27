@@ -1,5 +1,7 @@
-export const orderList = [];
-
+export let orderList = [];
+export function orderClear() {
+  orderList = [];
+}
 function startTest(
   width,
   height,

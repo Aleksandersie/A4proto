@@ -5,6 +5,7 @@ import TopStepper from "../components/TopStepper/TopStepper";
 import TopBreadCrumbs from "../components/TopBreadCrumbs/TopBreadCrumbs";
 import TypeBlock from "../components/TypeBlock/TypeBlock";
 import { useLocation } from "react-router-dom";
+import MaterialList from "../components/MateriaList/MaterialList";
 const IntPrint = () => {
   const location = useLocation();
   console.log(location);

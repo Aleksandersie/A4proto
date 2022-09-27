@@ -2,17 +2,18 @@ import { Card, Col, Container, Form, Row, Accordion } from "react-bootstrap";
 import React, { useContext } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { Context } from "../../index";
-import { orderList } from "../../calcLogic/calc";
+import { orderClear, orderList } from "../../calcLogic/calc";
 
 const OrderList = ({ orderItem }) => {
   const { order } = useContext(Context);
 
   const removeItem = (number) => {
+    orderClear();
     order.setOrder(order.order.filter((or) => or.random !== number));
-    let test = orderList.filter((el) => el.random !== number);
+    //let test = orderList.filter((el) => el.random !== number);
     console.log({ order });
-    console.log({ orderList });
-    console.log(test);
+    // console.log({ orderList });
+    // console.log(test);
   };
   return (
     // <Card

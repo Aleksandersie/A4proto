@@ -7,6 +7,8 @@ import React, { useContext } from "react";
 import CalcBlock from "../../components/CalcBlock/CaclBlock";
 import OrderListBlock from "../../components/OrderListBlock/OrderListBlock";
 import { Context } from "../../index";
+import MaterialSelector from "../../components/MaterialSelector/MaterialSelector";
+import MaterialList from "../../components/MateriaList/MaterialList";
 
 const IntPrintCalc = () => {
   return (
@@ -18,6 +20,7 @@ const IntPrintCalc = () => {
         <Col className="col-9 mt-4">
           <TopStepper />
           <TopBreadCrumbs />
+          <MaterialList />
           <CalcBlock />
           <OrderListBlock />
         </Col>
