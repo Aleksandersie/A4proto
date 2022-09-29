@@ -11,20 +11,23 @@ const CategoryBlock = () => {
     {
       name: "Интерьерная печать",
       path: INT_PRINT,
+      text: "Тестовый текст",
       imgLink:
-        "https://a4-yug.ru/wp-content/uploads/2020/10/maxresdefault-e1603785569284.jpg",
+        "https://a4-yug.ru/wp-content/uploads/2020/10/maxresdefault-e1603785569284.jpg"
     },
     {
       name: "Цифровая печать",
       path: INT_PRINT,
-      imgLink: "https://a4-yug.ru/wp-content/uploads/2020/10/flaery.jpg",
+      text: "В разработке",
+      imgLink: "https://a4-yug.ru/wp-content/uploads/2020/10/flaery.jpg"
     },
     {
       name: "Плоттерная резка",
       path: INT_PRINT,
+      text: "В разработке",
       imgLink:
-        "https://a4-yug.ru/wp-content/uploads/2020/10/plotternaya_rezka4.jpg",
-    },
+        "https://a4-yug.ru/wp-content/uploads/2020/10/plotternaya_rezka4.jpg"
+    }
   ];
 
   const location = useLocation();
@@ -42,7 +45,12 @@ const CategoryBlock = () => {
         <Row className="d-flex justify-content-around">
           {category.map((cat) => (
             <Col className="col-4 mt-3" key={cat.name}>
-              <TypeCard name={cat.name} path={cat.path} imgLink={cat.imgLink} />
+              <TypeCard
+                name={cat.name}
+                path={cat.path}
+                text={cat.text}
+                imgLink={cat.imgLink}
+              />
             </Col>
           ))}
         </Row>

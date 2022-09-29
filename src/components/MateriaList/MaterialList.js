@@ -5,7 +5,11 @@ import { Button, Card, Container } from "react-bootstrap";
 
 const MaterialList = observer(() => {
   const { materialList } = useContext(Context);
-  console.log({ materialList });
+
+  function selectVinyl(vinyl) {
+    materialList.setSelectedVinyl(vinyl);
+    console.log({ materialList });
+  }
   return (
     <Card className="mt-4">
       <Card.Header>
@@ -15,11 +19,16 @@ const MaterialList = observer(() => {
         {materialList.vinyl.map((vinyl) => (
           <Button
             key={vinyl.id}
-            variant="outline-warning"
+            //variant="outline-warning"
+            variant={
+              vinyl.id === materialList.selectedVinyl.id
+                ? "warning"
+                : "outline-warning"
+            }
             style={{ color: "black" }}
+            onClick={() => selectVinyl(vinyl)}
           >
             <div style={{ fontWeight: 600 }}>{vinyl.name}</div>
-            <br />
             <div style={{ color: "#6a6666" }}>{vinyl.description}</div>
             {vinyl.brand}
           </Button>

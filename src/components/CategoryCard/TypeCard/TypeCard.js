@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 import { useState } from "react";
 
-const TypeCard = ({ name, path, imgLink }) => {
+const TypeCard = ({ name, path, imgLink, text }) => {
   const test2 = () => {
     setTimeout(() => {
       console.log("Done");
@@ -34,10 +34,16 @@ const TypeCard = ({ name, path, imgLink }) => {
         alt="green iguana"
       />
       <CardContent style={{ textAlign: "center" }}>
-        <h6 style={{ fontSize: 15 }}>{name}</h6>
-        {/* <p>{text}</p> */}
+        <div style={{ fontSize: 17, fontWeight: "800" }}>{name}</div>
+        <p>{text}</p>
+        {/* {text} */}
+
         <NavLink to={path}>
-          <Button variant="warning" className="mt-5">
+          <Button
+            variant="warning"
+            className="mt-5"
+            disabled={text === "В разработке"}
+          >
             Выбрать
           </Button>
         </NavLink>
