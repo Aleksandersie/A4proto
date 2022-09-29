@@ -18,7 +18,10 @@ const MaterialList = observer(() => {
             variant="outline-warning"
             style={{ color: "black" }}
           >
-            {vinyl.name}
+            <div style={{ fontWeight: 600 }}>{vinyl.name}</div>
+            <br />
+            <div style={{ color: "#6a6666" }}>{vinyl.description}</div>
+            {vinyl.brand}
           </Button>
         ))}
       </div>
