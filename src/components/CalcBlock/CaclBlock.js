@@ -1,13 +1,16 @@
-import React from "react";
-import { Card } from "react-bootstrap";
+import React, { useContext } from "react";
+import { Button, Card } from "react-bootstrap";
 import CalcInputBlock from "../CalcInputBlock/CalcInputBlock";
 import { Paper } from "@mui/material";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../../index";
 import s from "./CalckBlock.module.css";
+import { observer } from "mobx-react-lite";
 
-const CalcBlock = () => {
+const CalcBlock = observer(() => {
   const navigate = useNavigate();
+  const { materialList } = useContext(Context);
   const goBack = () => {
     navigate(-1);
   };
@@ -26,16 +29,27 @@ const CalcBlock = () => {
               }}
               onClick={goBack}
             />
-            <div> Калькулятор расчета печати на плёнке</div>
+            <div> Калькулятор расчета печати</div>
           </div>
         </Card.Header>
         <Card.Body>
-          <Card.Title>Введите размеры:</Card.Title>
+          <Card.Title>
+            Выбраный материал:
+            <Button
+              variant="outline-warning"
+              disabled
+              style={{ color: "black", fontWeight: "800" }}
+              className=" ms-2"
+            >
+              {materialList.selectedVinyl.name}
+            </Button>
+          </Card.Title>
+          <Card.Title style={{ marginTop: 30 }}>Введите размеры:</Card.Title>
           <CalcInputBlock />
         </Card.Body>
       </Card>
     </Paper>
   );
-};
+});
 
 export default CalcBlock;

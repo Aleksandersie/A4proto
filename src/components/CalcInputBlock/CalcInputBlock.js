@@ -39,8 +39,8 @@ const CalcInputBlock = observer(() => {
   }
 
   return (
-    <div className="pb-4">
-      <Form className="mt-5 m-auto">
+    <div className=" ">
+      <Form className="mt-4 m-auto">
         <Row className="m-auto justify-content-center align-items-end">
           <Col md={2}>
             <h6 className="m-auto" style={{ textAlign: "center" }}>
@@ -112,7 +112,7 @@ const CalcInputBlock = observer(() => {
           </Col>
         </Row>
       </Form>
-      <MaterialSurfaceCheck />
+
       <div className="d-flex justify-content-evenly">
         <LaminationCheck />
         <BorderCutCheck />
@@ -132,21 +132,9 @@ const CalcInputBlock = observer(() => {
         </Col>
         <Col md={3}>
           <h6 className="m-auto" style={{ textAlign: "center" }}>
-            {"Файл"}
+            {"Прикрепите файл"}
           </h6>
-          <Form.Control className="mt-2" placeholder="Файл" type="file" />
-        </Col>
-        <Col md={3}>
-          <h6 className="m-auto" style={{ textAlign: "center" }}>
-            {"Стоимость"}
-          </h6>
-          <Form.Control
-            type="number"
-            value={coast}
-            onChange={(event) => setCoast(Number(event.target.value))}
-            className="mt-2"
-            placeholder="Стоимость"
-          />
+          <Form.Control className="mt-2" placeholder="" type="file" />
         </Col>
       </Row>
     </div>
