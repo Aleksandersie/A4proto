@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Dropdown } from "react-bootstrap";
 import CalcInputBlock from "../CalcInputBlock/CalcInputBlock";
 import { Paper } from "@mui/material";
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../../index";
 import s from "./CalckBlock.module.css";
 import { observer } from "mobx-react-lite";
+import MaterialDropdown from "../MaterialDropdown/MaterialDropdown";
 
 const CalcBlock = observer(() => {
   const navigate = useNavigate();
@@ -34,15 +35,18 @@ const CalcBlock = observer(() => {
         </Card.Header>
         <Card.Body>
           <Card.Title>
-            Выбраный материал:
-            <Button
+            <div className="d-flex justify-content-center align-items-center gap-3">
+              Используемый материал: <MaterialDropdown />
+            </div>
+
+            {/* <Button
               variant="outline-warning"
               disabled
               style={{ color: "black", fontWeight: "800" }}
               className=" ms-2"
             >
-              {materialList.selectedVinyl.name}
-            </Button>
+              {materialList.selectedVinyl.name || "Выберите материал"}
+            </Button> */}
           </Card.Title>
           <Card.Title style={{ marginTop: 30 }}>Введите размеры:</Card.Title>
           <CalcInputBlock />
