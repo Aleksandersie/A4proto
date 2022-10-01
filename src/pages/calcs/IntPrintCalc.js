@@ -9,6 +9,7 @@ import OrderListBlock from "../../components/OrderListBlock/OrderListBlock";
 import { Context } from "../../index";
 import MaterialSelector from "../../components/MaterialSelector/MaterialSelector";
 import MaterialList from "../../components/MateriaList/MaterialList";
+import NewMaterialSelector from "../../components/NewMaterialSelector/NewMaterialSelector";
 
 const IntPrintCalc = () => {
   return (
@@ -20,6 +21,7 @@ const IntPrintCalc = () => {
         <Col className="col-9 mt-4">
           <TopStepper />
           <TopBreadCrumbs />
+          <NewMaterialSelector />
           <MaterialList />
           <CalcBlock />
           <OrderListBlock />

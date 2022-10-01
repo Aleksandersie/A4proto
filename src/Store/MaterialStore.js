@@ -9,55 +9,92 @@ export default class MaterialStore {
         id: 1,
         name: "Плёнка",
         path: INT_PRINT_CALC,
-        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. "
+        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. ",
       },
       {
         id: 2,
         name: "Баннер",
         path: INT_PRINT_CALC,
-        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. "
+        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. ",
       },
       {
         id: 3,
         name: "Бумага",
         path: INT_PRINT_CALC,
-        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. "
+        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. ",
       },
       {
         id: 4,
         name: "Беклит",
         path: INT_PRINT_CALC,
-        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. "
-      }
+        desc: "Самоклеящуюся пленку используют для рекламы, декора, хобби. ",
+      },
     ];
     this._vinyl = [
       {
         name: "Белая глянцевая пленка",
         brand: "OraJet 3640G",
         id: 1,
-        description: "Имеет глянцевую поверхность и блеск"
+        description: "Имеет глянцевую поверхность и блеск",
+        imgLink:
+          "https://a.allegroimg.com/s720/11e1c1/5bbee43445ef9e097d766a0903c1/ORACAL-Folia-Klejowa-Meblowa-BIALA-POLYSK-1mx50cm-Marka-DecoMeister",
       },
       {
         name: "Белая матовая пленка",
         brand: "OraJet 3640M",
         id: 2,
-        description: "Имеет матовую поверхность и блеск отсутствует"
+        description: "Имеет матовую поверхность и блеск отсутствует",
+        imgLink:
+          "https://www.remex.ru/images/stories/virtuemart/product/50_v_orajet-3640.jpg",
       },
       {
         name: "Прозрачная глянцевая пленка",
         brand: "OraJet 3640 Clear G",
         id: 3,
-        description: "Прозрачная пленка, имеет блеск"
+        description: "Прозрачная пленка, имеет блеск",
+        imgLink:
+          "https://www.virage24.ru/upload/iblock/cfc/cfcd2106106c5a2a3562df68b6c3b7d0.jpeg",
       },
       {
-        name: "Белая матовая пленка",
+        name: "Прозрачная матовая пленка",
         brand: "OraJet 3640 Clear M",
         id: 4,
-        description: "Прозрачная пленка, блеск отсутствует"
-      }
+        description: "Прозрачная пленка, блеск отсутствует",
+        imgLink:
+          "https://fokus-groupp.ru/wp-content/uploads/2022/05/plenka-prozrachnaja-300x225.jpg",
+      },
+    ];
+    this._specVinyl = [
+      {
+        name: "Перфорированая пленка",
+        brand: "OraJet 3640G",
+        id: 1,
+        description: "Имеет глянцевую поверхность и блеск",
+        imgLink:
+          "https://redline32.ru/assets/cache_image/images/Products/print_materials/perforated-film_1920x0_6c4.jpg",
+      },
+      {
+        name: "С черным клевым слоем",
+        brand: "OraJet 3640M",
+        id: 2,
+        description: "Имеет матовую поверхность и блеск отсутствует",
+      },
+      {
+        name: "Полимерная пленка",
+        brand: "OraJet 3640 Clear G",
+        id: 3,
+        description: "Прозрачная пленка, имеет блеск",
+      },
+      {
+        name: "Цветная пленка",
+        brand: "OraJet 3640 Clear M",
+        id: 4,
+        description: "Прозрачная пленка, блеск отсутствует",
+      },
     ];
     this._selectedMaterial = {};
     this._selectedVinyl = {};
+    this._selectedSpecVinyl = {};
     makeAutoObservable(this);
   }
 
@@ -85,5 +122,11 @@ export default class MaterialStore {
   }
   get selectedVinyl() {
     return this._selectedVinyl;
+  }
+  setSelectedSpecVinyl(vinyl) {
+    this._selectedSpecVinyl = vinyl;
+  }
+  get selectedSpecVinyl() {
+    return this._selectedSpecVinyl;
   }
 }
