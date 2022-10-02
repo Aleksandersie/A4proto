@@ -22,7 +22,6 @@ const IntPrintCalc = () => {
           <TopStepper />
           <TopBreadCrumbs />
           <NewMaterialSelector />
-          <MaterialList />
           <CalcBlock />
           <OrderListBlock />
         </Col>

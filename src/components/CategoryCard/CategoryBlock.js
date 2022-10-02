@@ -2,7 +2,11 @@ import React from "react";
 import { Paper } from "@mui/material";
 import { Row, Col, Card } from "react-bootstrap";
 import TypeCard from "./TypeCard/TypeCard";
-import { INT_PRINT } from "../../routeConst/routeConst";
+import {
+  INT_PRINT,
+  INT_PRINT_CALC,
+  INT_PRINT_CUT,
+} from "../../routeConst/routeConst";
 import { useLocation } from "react-router-dom";
 import s from "../CalcBlock/CalckBlock.module.css";
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -10,31 +14,50 @@ const CategoryBlock = () => {
   const category = [
     {
       name: "Интерьерная печать",
-      path: INT_PRINT,
+      path: INT_PRINT_CALC,
       text: "Тестовый текст",
       imgLink:
-        "https://a4-yug.ru/wp-content/uploads/2020/10/maxresdefault-e1603785569284.jpg"
+        "https://a4-yug.ru/wp-content/uploads/2020/10/maxresdefault-e1603785569284.jpg",
+    },
+    {
+      name: "Печать и контурная резка",
+      path: INT_PRINT_CUT,
+      text: "Тестовый текст",
+      imgLink: "https://a4-yug.ru/wp-content/uploads/2020/10/etiketki1.jpg",
     },
     {
       name: "Цифровая печать",
       path: INT_PRINT,
       text: "В разработке",
-      imgLink: "https://a4-yug.ru/wp-content/uploads/2020/10/flaery.jpg"
+      imgLink: "https://a4-yug.ru/wp-content/uploads/2020/10/flaery.jpg",
     },
     {
       name: "Плоттерная резка",
       path: INT_PRINT,
       text: "В разработке",
       imgLink:
-        "https://a4-yug.ru/wp-content/uploads/2020/10/plotternaya_rezka4.jpg"
-    }
+        "https://a4-yug.ru/wp-content/uploads/2020/10/plotternaya_rezka4.jpg",
+    },
+    {
+      name: "Стенды и таблички",
+      path: INT_PRINT,
+      text: "В разработке",
+      imgLink:
+        "https://a4-yug.ru/wp-content/uploads/2020/10/ugolok-potrebitelya.jpg",
+    },
+    {
+      name: "Ролл ап стенды",
+      path: INT_PRINT,
+      text: "В разработке",
+      imgLink: "https://a4-yug.ru/wp-content/uploads/2020/09/menu7.png",
+    },
   ];
 
   const location = useLocation();
   console.log(location);
 
   return (
-    <Card className="text-center mt-4 shadow ">
+    <Card className="text-center mt-4 mb-4 shadow ">
       <Card.Header style={{ fontSize: 25, fontWeight: 500 }}>
         <div className={s.block}>
           <div>Выберите категорию</div>

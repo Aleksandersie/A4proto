@@ -34,7 +34,7 @@ const TypeCard = ({ name, path, imgLink, text }) => {
         alt="green iguana"
       />
       <CardContent style={{ textAlign: "center" }}>
-        <div style={{ fontSize: 17, fontWeight: "800" }}>{name}</div>
+        <div style={{ fontSize: 15, fontWeight: "800" }}>{name}</div>
         <p>{text}</p>
         {/* {text} */}
 
