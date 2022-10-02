@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Col, Form, FormControl, Row } from "react-bootstrap";
 import startTest from "../../calcLogic/calc";
 import { observer } from "mobx-react-lite";
@@ -12,9 +12,9 @@ const CalcInputBlock = observer(() => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const [description, setDescription] = useState("Наклейки");
-  const [count, setCount] = useState(0);
-  const [coast, setCoast] = useState(0);
-  console.log(count);
+  const [count, setCount] = useState(1);
+  const [preFlight, setPreFlight] = useState({ area: 0, areaTotal: 0 });
+  const { price } = useContext(Context);
   const { materialList } = useContext(Context);
   const { order } = useContext(Context);
   const { checkStore } = useContext(Context);
@@ -33,11 +33,14 @@ const CalcInputBlock = observer(() => {
       checkStore.borderCut
     );
     order.setOrder(result);
-    // console.log(result);
-    // console.log({ order });
-    // console.log({ orderList });
   }
-
+  console.log(`w:${width} h:${height}`);
+  useEffect(() => {
+    let area = (width * height).toFixed(3);
+    let areaT = (area * count).toFixed(3);
+    console.log(areaT);
+    setPreFlight({ area: area, areaTotal: areaT });
+  }, [width, height, count]);
   return (
     <div className=" ">
       <Form className="mt-4 m-auto">
@@ -116,6 +119,27 @@ const CalcInputBlock = observer(() => {
       <div className="d-flex justify-content-evenly">
         <LaminationCheck />
         <BorderCutCheck />
+        <div>test{preFlight.area}</div>
+      </div>
+      <div style={{ textAlign: "center" }} className="mt-4">
+        <h5>Результаты расчета</h5>
+        <div
+          style={{ textAlign: "center" }}
+          className="mt-4 d-flex justify-content-center gap-3"
+        >
+          <div className="d-flex">
+            <div style={{ fontWeight: 700, marginRight: 5 }}>
+              Общая площадь:
+            </div>
+            {preFlight.areaTotal}
+          </div>
+          <div className="d-flex">
+            <div style={{ fontWeight: 700, marginRight: 5 }}>
+              Площадь одной штуки:
+            </div>
+            {preFlight.area}
+          </div>
+        </div>
       </div>
 
       <Row className="d-flex justify-content-center mt-5">
