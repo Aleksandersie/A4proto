@@ -15,18 +15,24 @@ const NewMaterialSelector = observer(() => {
     materialList.setSelectedMaterial(v);
   }
   return (
-    <Card className="mt-4">
+    <Card className="mt-4 pb-4">
       <Card.Header style={{ textAlign: "center" }}>
         <h4>Выберите материал</h4>
       </Card.Header>
-      <div className="d-flex">
+      <div className="d-flex flex-row">
         <div className="col-6 ">
-          <Card className="mt-5 ms-5">
-            <Image
-              width={350}
-              src={materialList.selectedMaterial.imgLink}
-            ></Image>
-          </Card>
+          <div style={{ textAlign: "center" }} className="ms-5">
+            <Card className="mt-5  shadow" style={{ overflow: "hidden" }}>
+              <Image
+                width={350}
+                style={{ width: "100%" }}
+                src={materialList.selectedMaterial.imgLink}
+              ></Image>
+            </Card>
+            <h5 className="mt-3">{materialList.selectedMaterial.name}</h5>
+            <h6>({materialList.selectedMaterial.brand})</h6>
+            <p>{materialList.selectedMaterial.description}</p>
+          </div>
         </div>
         <div className="col-6">
           <div className="mt-3" style={{ textAlign: "center" }}>
@@ -71,7 +77,6 @@ const NewMaterialSelector = observer(() => {
           </ListGroup>
         </div>
       </div>
-      {materialList.selectedMaterial.name}
     </Card>
   );
 });
