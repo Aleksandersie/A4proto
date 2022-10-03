@@ -38,8 +38,9 @@ const CalcInputBlock = observer(() => {
   useEffect(() => {
     let area = (width * height).toFixed(3);
     let areaT = (area * count).toFixed(3);
-    console.log(areaT);
-    setPreFlight({ area: area, areaTotal: areaT });
+    let oneCount = (area*price.priceList.vinyl).toFixed(3)
+    let totalCount = (areaT*price.priceList.vinyl).toFixed(2)
+    setPreFlight({ area: area, areaTotal: areaT,priceOneCount: oneCount, priceTotal: totalCount });
   }, [width, height, count]);
   return (
     <div className=" ">
@@ -138,6 +139,18 @@ const CalcInputBlock = observer(() => {
               Площадь одной штуки:
             </div>
             {preFlight.area}
+          </div>
+          <div className="d-flex">
+            <div style={{ fontWeight: 700, marginRight: 5 }}>
+              Стоимость одной штуки:
+            </div>
+            {preFlight.priceOneCount}
+          </div>
+          <div className="d-flex">
+            <div style={{ fontWeight: 700, marginRight: 5 }}>
+              Общая стоимость:
+            </div>
+            {preFlight.priceTotal}
           </div>
         </div>
       </div>

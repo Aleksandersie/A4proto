@@ -15,7 +15,7 @@ const CategoryBlock = () => {
     {
       name: "Интерьерная печать",
       path: INT_PRINT_CALC,
-      text: "Тестовый текст",
+      text: "Рабочая ветка",
       imgLink:
         "https://a4-yug.ru/wp-content/uploads/2020/10/maxresdefault-e1603785569284.jpg",
     },

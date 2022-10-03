@@ -12,7 +12,7 @@ const MaterialDropdown = observer(() => {
         id="dropdown-basic"
         style={{ color: "black" }}
       >
-        {materialList.selectedVinyl.name || "Выберите материал"}
+        {materialList.selectedMaterial.name || "Выберите материал"}
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
