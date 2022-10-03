@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Button, Col, Form, FormControl, Row } from "react-bootstrap";
+import {Button, Card, Col, Form, FormControl, Row, Table} from "react-bootstrap";
 import startTest from "../../calcLogic/calc";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../index";
 import { TextField } from "@mui/material";
+import {BiRuble} from "react-icons/bi"
 import MaterialSurfaceCheck from "../MaterialSurfaceCheck/MaterialSurfaceCheck";
 import LaminationCheck from "../LaminationCheck/LaminationCheck";
 import BorderCutCheck from "../BorderCutCheck/BorderCutCheck";
@@ -35,16 +36,22 @@ const CalcInputBlock = observer(() => {
     order.setOrder(result);
   }
   console.log(`w:${width} h:${height}`);
+
   useEffect(() => {
     let area = (width * height).toFixed(3);
-    let areaT = (area * count).toFixed(3);
-    let oneCount = (area * price.priceList.vinyl).toFixed(3);
-    let totalCount = (areaT * price.priceList.vinyl).toFixed(2);
+    let areaT = (area * count).toFixed(2)
+    let oneCount = area * price.priceList.vinyl
+    let totalCount = areaT * price.priceList.vinyl
+    let minOrder = 500/ oneCount
+    let countPerMeter = 1 / area
+    console.log(oneCount)
     setPreFlight({
       area: area,
       areaTotal: areaT,
       priceOneCount: oneCount,
-      priceTotal: totalCount
+      priceTotal: totalCount,
+      minOrder: minOrder,
+      countPerMeter: countPerMeter
     });
   }, [width, height, count]);
   return (
@@ -126,38 +133,50 @@ const CalcInputBlock = observer(() => {
         <LaminationCheck />
         <BorderCutCheck />
       </div>
-      <div style={{ textAlign: "center" }} className="mt-4">
+      <div style={{ textAlign: "center" }} className="mt-4 ms-3 me-3">
         <h5>Результаты расчета</h5>
-        <div
-          style={{ textAlign: "center" }}
-          className="mt-4 d-flex justify-content-center gap-3"
-        >
-          <div className="d-flex">
-            <div style={{ fontWeight: 700, marginRight: 5 }}>
-              Общая площадь:
-            </div>
-            {preFlight.areaTotal}
-          </div>
-          <div className="d-flex">
-            <div style={{ fontWeight: 700, marginRight: 5 }}>
-              Площадь одной штуки:
-            </div>
-            {preFlight.area}
-          </div>
-          <div className="d-flex">
-            <div style={{ fontWeight: 700, marginRight: 5 }}>
-              Стоимость одной штуки:
-            </div>
-            {preFlight.priceOneCount}
-          </div>
-          <div className="d-flex">
-            <div style={{ fontWeight: 700, marginRight: 5 }}>
-              Общая стоимость:
-            </div>
-            {preFlight.priceTotal}
-          </div>
-        </div>
+
+          <Table striped bordered hover size="sm" className='mt-4'>
+            <thead>
+            <tr>
+              <th colSpan={4}>Размеры изделия: {width}x{height} м. Количество: {count} шт. <br/> Материал: {materialList.selectedMaterial.name}</th>
+
+            </tr>
+            <tr>
+              <th>Общая площадь:</th>
+              <th>Площадь одной штуки:</th>
+              <th>Стоимость одной штуки:</th>
+              <th>Общая стоимость:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{preFlight.areaTotal}</td>
+              <td>{preFlight.area}</td>
+              <td>{preFlight.priceOneCount} <BiRuble/></td>
+              <td>{preFlight.priceTotal} <BiRuble/></td>
+            </tr>
+            </tbody>
+            <thead>
+            <tr>
+              <th>Минимальный заказ:</th>
+              <th>Штук на м2:</th>
+              <th>Ламинация:</th>
+              <th>Подрезка:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{preFlight.minOrder}</td>
+              <td>{preFlight.countPerMeter}</td>
+              <td>{checkStore.lamination? "Да" : "Нет"} </td>
+              <td>{checkStore.borderCut? "Да" : "Нет"} </td>
+            </tr>
+            </tbody>
+          </Table>
+        {/*</div>*/}
       </div>
+
 
       <Row className="d-flex justify-content-center mt-5">
         <Col md={3}>
