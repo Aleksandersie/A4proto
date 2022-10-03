@@ -22,15 +22,19 @@ const NewMaterialSelector = observer(() => {
       <div className="d-flex flex-row">
         <div className="col-6 ">
           <div style={{ textAlign: "center" }} className="ms-5">
-            <Card className="mt-5  shadow" style={{ overflow: "hidden" }}>
-              <Image
-                width={350}
-                style={{ width: "100%" }}
-                src={materialList.selectedMaterial.imgLink}
-              ></Image>
-            </Card>
+            {materialList.selectedMaterial.name ? (
+              <Card className="mt-5  shadow" style={{ overflow: "hidden" }}>
+                <Image
+                  width={350}
+                  style={{ width: "100%" }}
+                  src={materialList.selectedMaterial.imgLink}
+                ></Image>
+              </Card>
+            ) : (
+              <div></div>
+            )}
             <h5 className="mt-3">{materialList.selectedMaterial.name}</h5>
-            <h6>({materialList.selectedMaterial.brand})</h6>
+            <h6>{materialList.selectedMaterial.brand}</h6>
             <p>{materialList.selectedMaterial.description}</p>
           </div>
         </div>

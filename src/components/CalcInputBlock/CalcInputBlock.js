@@ -38,9 +38,14 @@ const CalcInputBlock = observer(() => {
   useEffect(() => {
     let area = (width * height).toFixed(3);
     let areaT = (area * count).toFixed(3);
-    let oneCount = (area*price.priceList.vinyl).toFixed(3)
-    let totalCount = (areaT*price.priceList.vinyl).toFixed(2)
-    setPreFlight({ area: area, areaTotal: areaT,priceOneCount: oneCount, priceTotal: totalCount });
+    let oneCount = (area * price.priceList.vinyl).toFixed(3);
+    let totalCount = (areaT * price.priceList.vinyl).toFixed(2);
+    setPreFlight({
+      area: area,
+      areaTotal: areaT,
+      priceOneCount: oneCount,
+      priceTotal: totalCount
+    });
   }, [width, height, count]);
   return (
     <div className=" ">
@@ -120,7 +125,6 @@ const CalcInputBlock = observer(() => {
       <div className="d-flex justify-content-evenly">
         <LaminationCheck />
         <BorderCutCheck />
-        <div>test{preFlight.area}</div>
       </div>
       <div style={{ textAlign: "center" }} className="mt-4">
         <h5>Результаты расчета</h5>
