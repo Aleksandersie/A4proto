@@ -6,6 +6,7 @@ import OrderStore from "./Store/OrderStore";
 import PriceStore from "./Store/PriceStore";
 import MaterialStore from "./Store/MaterialStore";
 import CheckBoxStore from "./Store/CheckBoxStore";
+import AdditionalStore from "./Store/AdditionalSrevices";
 
 export const Context = createContext(null);
 
@@ -17,7 +18,8 @@ root.render(
       order: new OrderStore(),
       price: new PriceStore(),
       materialList: new MaterialStore(),
-      checkStore: new CheckBoxStore()
+      checkStore: new CheckBoxStore(),
+      AddService: new AdditionalStore()
     }}
   >
     <React.StrictMode>
