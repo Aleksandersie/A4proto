@@ -10,6 +10,7 @@ import { Context } from "../../index";
 import MaterialSelector from "../../components/MaterialSelector/MaterialSelector";
 import MaterialList from "../../components/MateriaList/MaterialList";
 import NewMaterialSelector from "../../components/NewMaterialSelector/NewMaterialSelector";
+import AdditionalBlock from "../../components/AdditionalBlock/AdditionalBlock";
 
 const IntPrintCalc = () => {
   return (
@@ -22,6 +23,7 @@ const IntPrintCalc = () => {
           <TopStepper />
           <TopBreadCrumbs />
           <NewMaterialSelector />
+          <AdditionalBlock />
           <CalcBlock />
           <OrderListBlock />
         </Col>
