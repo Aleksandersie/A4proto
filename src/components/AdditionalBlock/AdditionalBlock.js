@@ -1,15 +1,7 @@
-import { useContext, useState } from "react";
-import { Card, ToggleButton, Image } from "react-bootstrap";
-import { Context } from "../..";
+import { Card } from "react-bootstrap";
 import Lamination from "./Lamination/Lamination";
-
+import BorderCut from "./BorderCut/BorderCut";
 const AdditionalBlock = () => {
-  const [lamination, setLamination] = useState(false);
-  function lam(e) {
-    setLamination(e);
-    console.log(lamination);
-  }
-  const { AddService } = useContext(Context);
   return (
     <Card className="mt-5">
       <Card.Header style={{ textAlign: "center" }}>
@@ -17,6 +9,7 @@ const AdditionalBlock = () => {
       </Card.Header>
       <div className="d-flex justify-content-center gap-5">
         <Lamination />
+        <BorderCut />
       </div>
     </Card>
   );

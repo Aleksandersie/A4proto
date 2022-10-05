@@ -1,9 +1,10 @@
 import { Button, Card, ToggleButton } from "react-bootstrap";
+import { observer } from "mobx-react-lite";
 import { useContext, useState } from "react";
 
 import { Context } from "../../../index";
 
-const Lamination = () => {
+const Lamination = observer(() => {
   const { checkStore } = useContext(Context);
   const [lamination, setLamination] = useState(false);
   function lam(e) {
@@ -42,6 +43,6 @@ const Lamination = () => {
       </ToggleButton>
     </Card>
   );
-};
+});
 
 export default Lamination;

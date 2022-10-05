@@ -1,10 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
-import {Button, Card, Col, Form, FormControl, Row, Table} from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Col,
+  Form,
+  FormControl,
+  Row,
+  Table
+} from "react-bootstrap";
 import startTest from "../../calcLogic/calc";
 import { observer } from "mobx-react-lite";
 import { Context } from "../../index";
 import { TextField } from "@mui/material";
-import {BiRuble} from "react-icons/bi"
+import { BiRuble } from "react-icons/bi";
 import MaterialSurfaceCheck from "../MaterialSurfaceCheck/MaterialSurfaceCheck";
 import LaminationCheck from "../LaminationCheck/LaminationCheck";
 import BorderCutCheck from "../BorderCutCheck/BorderCutCheck";
@@ -39,12 +47,12 @@ const CalcInputBlock = observer(() => {
 
   useEffect(() => {
     let area = (width * height).toFixed(3);
-    let areaT = (area * count).toFixed(2)
-    let oneCount = area * price.priceList.vinyl
-    let totalCount = areaT * price.priceList.vinyl
-    let minOrder = 500/ oneCount
-    let countPerMeter = 1 / area
-    console.log(oneCount)
+    let areaT = (area * count).toFixed(2);
+    let oneCount = area * price.priceList.vinyl;
+    let totalCount = areaT * price.priceList.vinyl;
+    let minOrder = 500 / oneCount;
+    let countPerMeter = 1 / area;
+    console.log(oneCount);
     setPreFlight({
       area: area,
       areaTotal: areaT,
@@ -130,17 +138,19 @@ const CalcInputBlock = observer(() => {
       </Form>
 
       <div className="d-flex justify-content-evenly">
-        <LaminationCheck />
-        <BorderCutCheck />
+        {/* <LaminationCheck />
+        <BorderCutCheck /> */}
       </div>
       <div style={{ textAlign: "center" }} className="mt-4 ms-3 me-3">
         <h5>Результаты расчета</h5>
 
-          <Table striped bordered hover size="sm" className='mt-4'>
-            <thead>
+        <Table striped bordered hover size="sm" className="mt-4">
+          <thead>
             <tr>
-              <th colSpan={4}>Размеры изделия: {width}x{height} м. Количество: {count} шт. <br/> Материал: {materialList.selectedMaterial.name}</th>
-
+              <th colSpan={4}>
+                Размеры изделия: {width}x{height} м. Количество: {count} шт.{" "}
+                <br /> Материал: {materialList.selectedMaterial.name}
+              </th>
             </tr>
             <tr>
               <th>Общая площадь:</th>
@@ -148,35 +158,38 @@ const CalcInputBlock = observer(() => {
               <th>Стоимость одной штуки:</th>
               <th>Общая стоимость:</th>
             </tr>
-            </thead>
-            <tbody>
+          </thead>
+          <tbody>
             <tr>
               <td>{preFlight.areaTotal}</td>
               <td>{preFlight.area}</td>
-              <td>{preFlight.priceOneCount} <BiRuble/></td>
-              <td>{preFlight.priceTotal} <BiRuble/></td>
+              <td>
+                {preFlight.priceOneCount} <BiRuble />
+              </td>
+              <td>
+                {preFlight.priceTotal} <BiRuble />
+              </td>
             </tr>
-            </tbody>
-            <thead>
+          </tbody>
+          <thead>
             <tr>
               <th>Минимальный заказ:</th>
               <th>Штук на м2:</th>
               <th>Ламинация:</th>
               <th>Подрезка:</th>
             </tr>
-            </thead>
-            <tbody>
+          </thead>
+          <tbody>
             <tr>
               <td>{preFlight.minOrder}</td>
               <td>{preFlight.countPerMeter}</td>
-              <td>{checkStore.lamination? "Да" : "Нет"} </td>
-              <td>{checkStore.borderCut? "Да" : "Нет"} </td>
+              <td>{checkStore.lamination ? "Да" : "Нет"} </td>
+              <td>{checkStore.borderCut ? "Да" : "Нет"} </td>
             </tr>
-            </tbody>
-          </Table>
+          </tbody>
+        </Table>
         {/*</div>*/}
       </div>
-
 
       <Row className="d-flex justify-content-center mt-5">
         <Col md={3}>
