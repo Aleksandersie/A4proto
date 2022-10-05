@@ -1,12 +1,16 @@
-import { Card, ToggleButton } from "react-bootstrap";
-import { useState } from "react";
+import { Button, Card, ToggleButton } from "react-bootstrap";
+import { useContext, useState } from "react";
+
+import { Context } from "../../../index";
 
 const Lamination = () => {
-  const [lamination, setLamination] = useState();
+  const { checkStore } = useContext(Context);
+  const [lamination, setLamination] = useState(false);
   function lam(e) {
     setLamination(e);
+    checkStore.setLamination(e);
     console.log(lamination);
-    //console.log(e);
+    console.log({ checkStore });
   }
   const img = "https://i.ytimg.com/vi/oyIB4r6CCA0/hqdefault.jpg";
 
@@ -29,7 +33,8 @@ const Lamination = () => {
         style={{ color: "black" }}
         id="toggle-check"
         type="checkbox"
-        variant={lamination === true ? "outline" : "warning"}
+        variant="outline-warning"
+        // variant={checkStore.lamination === true ? "outline" : "warning"}
         checked={lamination}
         onChange={(e) => lam(e.target.checked)}
       >
