@@ -11,6 +11,7 @@ import MaterialSelector from "../../components/MaterialSelector/MaterialSelector
 import MaterialList from "../../components/MateriaList/MaterialList";
 import NewMaterialSelector from "../../components/NewMaterialSelector/NewMaterialSelector";
 import AdditionalBlock from "../../components/AdditionalBlock/AdditionalBlock";
+import MaterialTypeList from "../../components/MaterialTypeList/MaterialTypeList";
 
 const IntPrintCalc = () => {
   return (
@@ -22,6 +23,7 @@ const IntPrintCalc = () => {
         <Col className="col-9 mt-4">
           <TopStepper />
           <TopBreadCrumbs />
+          <MaterialTypeList />
           <NewMaterialSelector />
           <AdditionalBlock />
           <CalcBlock />
