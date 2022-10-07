@@ -6,6 +6,7 @@ const MaterialTypeList = () => {
       <Card.Header>
         <h4>Выберите тип материала</h4>
       </Card.Header>
+      <Card>123</Card>
     </Card>
   );
 };
