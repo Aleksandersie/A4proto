@@ -3,7 +3,7 @@ import { Card, ListGroup, Button, Image } from "react-bootstrap";
 import { Context } from "../../index";
 import { observer } from "mobx-react-lite";
 import { ImageList } from "@mui/material";
-
+import { AiOutlineQuestionCircle } from "react-icons/ai";
 const NewMaterialSelector = observer(() => {
   const { materialList } = useContext(Context);
   function selectVinyl(v) {
@@ -32,7 +32,18 @@ const NewMaterialSelector = observer(() => {
                 ></Image>
               </Card>
             ) : (
-              <div></div>
+              <div>
+                {" "}
+                <Card
+                  className="mt-5  shadow"
+                  style={{ overflow: "hidden", width: 400, height: 350 }}
+                >
+                  <AiOutlineQuestionCircle
+                    style={{ fontSize: 150 }}
+                    className="m-auto"
+                  />
+                </Card>
+              </div>
             )}
             <h5 className="mt-3">{materialList.selectedMaterial.name}</h5>
             <h6>{materialList.selectedMaterial.brand}</h6>
