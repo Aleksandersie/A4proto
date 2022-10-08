@@ -8,6 +8,7 @@ const NewMaterialSelector = observer(() => {
   const { materialList } = useContext(Context);
   function selectVinyl(v) {
     //materialList.setSelectedVinyl(v);
+    console.log(v);
     materialList.setSelectedMaterial(v);
   }
   function selectSpecVinyl(v) {
@@ -48,9 +49,9 @@ const NewMaterialSelector = observer(() => {
                 key={v.id}
                 className="mt-2"
                 variant={
-                  v.id === materialList.selectedVinyl.id
-                    ? "warning"
-                    : "outline-warning"
+                  v.name === materialList.selectedMaterial.name
+                    ? "danger"
+                    : "warning"
                 }
                 style={{ color: "black" }}
                 onClick={() => selectVinyl(v)}
@@ -68,9 +69,9 @@ const NewMaterialSelector = observer(() => {
                 key={v.id}
                 className="mt-2"
                 variant={
-                  v.name === materialList.selectedSpecVinyl.name
-                    ? "warning"
-                    : "outline-warning"
+                  v.name === materialList.selectedMaterial.name
+                    ? "danger"
+                    : "warning"
                 }
                 style={{ color: "black" }}
                 onClick={() => selectSpecVinyl(v)}
