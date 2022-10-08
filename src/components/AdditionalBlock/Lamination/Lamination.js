@@ -34,8 +34,8 @@ const Lamination = observer(() => {
         style={{ color: "black" }}
         id="toggle-check"
         type="checkbox"
-        variant="outline-warning"
-        // variant={checkStore.lamination === true ? "outline" : "warning"}
+        //variant="outline-warning"
+        variant={checkStore.lamination === true ? "danger" : "warning"}
         checked={lamination}
         onChange={(e) => lam(e.target.checked)}
       >

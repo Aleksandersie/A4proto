@@ -33,7 +33,7 @@ const BorderCut = observer(() => {
         style={{ color: "black" }}
         id="toggle-check2"
         type="checkbox"
-        variant="outline-warning"
+        variant={checkStore.borderCut === true ? "danger" : "warning"}
         checked={border}
         onChange={(e) => borderCut(e.target.checked)}
       >
