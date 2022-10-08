@@ -128,6 +128,7 @@ export default class MaterialStore {
     this._selectedMaterial = {};
     this._selectedVinyl = {};
     this._selectedSpecVinyl = {};
+    this._selectedIntPrintMaterial={};
     makeAutoObservable(this);
   }
 
@@ -168,4 +169,11 @@ export default class MaterialStore {
   get intPrintMaterial() {
     return this._intPrintMaterial;
   }
+  setSelectedIntPrintMaterial(material){
+    this._selectedIntPrintMaterial = material
+  }
+  get selectedIntPrintMaterial(){
+    return this._selectedIntPrintMaterial
+  }
+
 }
