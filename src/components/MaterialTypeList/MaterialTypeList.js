@@ -7,9 +7,11 @@ const MaterialTypeList = observer(() => {
   const { materialList } = useContext(Context);
   function selectType(material) {
     //materialList.setSelectedMaterialType([]);
+    materialList.setSelectedIntPrintMaterial(material); //подсветка кнопки
     if (material.name === "Плёнка") {
       console.log("Выбрана пленка");
       //materialList.setSelectedMaterialType([]);
+
       materialList.setSelectedMaterialType(materialList.vinyl);
     }
     if (material.name === "Бумага") {

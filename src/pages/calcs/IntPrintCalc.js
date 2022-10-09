@@ -3,7 +3,7 @@ import SideBar from "../../components/SideBar/SideBar";
 import TopStepper from "../../components/TopStepper/TopStepper";
 import TopBreadCrumbs from "../../components/TopBreadCrumbs/TopBreadCrumbs";
 import CategoryBlock from "../../components/CategoryCard/CategoryBlock";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import CalcBlock from "../../components/CalcBlock/CaclBlock";
 import OrderListBlock from "../../components/OrderListBlock/OrderListBlock";
 import { Context } from "../../index";
@@ -14,6 +14,15 @@ import AdditionalBlock from "../../components/AdditionalBlock/AdditionalBlock";
 import MaterialTypeList from "../../components/MaterialTypeList/MaterialTypeList";
 
 const IntPrintCalc = () => {
+  const { materialList } = useContext(Context);
+  // useEffect(() => {
+  //   if (materialList.selectedMaterialType.name === undefined) {
+  //     //materialList.setSelectedMaterialType(materialList.intPrintMaterial);
+  //     materialList.setSelectedMaterialType(materialList.vinyl);
+  //     materialList.setSelectedIntPrintMaterial(materialList.vinyl)
+  //     console.log("empty");
+  //   }
+  // });
   return (
     <Container>
       <Row>

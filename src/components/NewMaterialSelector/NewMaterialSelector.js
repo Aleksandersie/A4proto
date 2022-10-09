@@ -69,26 +69,32 @@ const NewMaterialSelector = observer(() => {
               </Button>
             ))}
           </ListGroup>
-          <div className="mt-3" style={{ textAlign: "center" }}>
-            <h5>Специальные плёнки:</h5>
-          </div>
-          <ListGroup className="ms-5 me-5">
-            {materialList._specVinyl.map((v) => (
-              <Button
-                key={v.id}
-                className="mt-2"
-                variant={
-                  v.name === materialList.selectedMaterial.name
-                    ? "danger"
-                    : "warning"
-                }
-                style={{ color: "black" }}
-                onClick={() => selectSpecVinyl(v)}
-              >
-                {v.name}
-              </Button>
-            ))}
-          </ListGroup>
+          {materialList.selectedIntPrintMaterial.name !== "Плёнка" ? (
+            <div></div>
+          ) : (
+            <div>
+              <div className="mt-3" style={{ textAlign: "center" }}>
+                <h5>Специальные плёнки:</h5>
+              </div>
+              <ListGroup className="ms-5 me-5">
+                {materialList._specVinyl.map((v) => (
+                  <Button
+                    key={v.id}
+                    className="mt-2"
+                    variant={
+                      v.name === materialList.selectedMaterial.name
+                        ? "danger"
+                        : "warning"
+                    }
+                    style={{ color: "black" }}
+                    onClick={() => selectSpecVinyl(v)}
+                  >
+                    {v.name}
+                  </Button>
+                ))}
+              </ListGroup>
+            </div>
+          )}
         </div>
       </div>
     </Card>
