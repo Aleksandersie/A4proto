@@ -7,12 +7,10 @@ import { AiOutlineQuestionCircle } from "react-icons/ai";
 const NewMaterialSelector = observer(() => {
   const { materialList } = useContext(Context);
   function selectVinyl(v) {
-    //materialList.setSelectedVinyl(v);
     console.log(v);
     materialList.setSelectedMaterial(v);
   }
   function selectSpecVinyl(v) {
-    // materialList.setSelectedSpecVinyl(v);
     materialList.setSelectedMaterial(v);
   }
   return (
@@ -55,7 +53,7 @@ const NewMaterialSelector = observer(() => {
             <h5>Стандартные плёнки:</h5>
           </div>
           <ListGroup className="ms-5 me-5">
-            {materialList.vinyl.map((v) => (
+            {materialList.selectedMaterialType.map((v) => (
               <Button
                 key={v.id}
                 className="mt-2"

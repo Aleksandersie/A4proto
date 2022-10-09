@@ -6,7 +6,19 @@ import { observer } from "mobx-react-lite";
 const MaterialTypeList = observer(() => {
   const { materialList } = useContext(Context);
   function selectType(material) {
-    materialList.setSelectedIntPrintMaterial(material);
+    //materialList.setSelectedMaterialType([]);
+    if (material.name === "Плёнка") {
+      console.log("Выбрана пленка");
+      //materialList.setSelectedMaterialType([]);
+      materialList.setSelectedMaterialType(materialList.vinyl);
+    }
+    if (material.name === "Бумага") {
+      console.log("Выбрана бумага");
+      //materialList.setSelectedMaterialType([]);
+      materialList.setSelectedMaterialType(materialList.intPrintPhotoPaper);
+    }
+    //materialList.setSelectedIntPrintMaterial(material);
+
     console.log({ materialList });
   }
   return (
