@@ -6,7 +6,7 @@ import {
   Form,
   FormControl,
   Row,
-  Table
+  Table,
 } from "react-bootstrap";
 import startTest from "../../calcLogic/calc";
 import { observer } from "mobx-react-lite";
@@ -51,15 +51,21 @@ const CalcInputBlock = observer(() => {
     let oneCount = area * price.priceList.vinyl;
     let totalCount = areaT * price.priceList.vinyl;
     let minOrder = 500 / oneCount;
+    if (minOrder === Infinity) {
+      minOrder = "";
+    }
     let countPerMeter = 1 / area;
-    console.log(oneCount);
+    if (countPerMeter === Infinity) {
+      countPerMeter = "";
+    }
+    console.log(minOrder);
     setPreFlight({
       area: area,
       areaTotal: areaT,
       priceOneCount: oneCount,
       priceTotal: totalCount,
       minOrder: minOrder,
-      countPerMeter: countPerMeter
+      countPerMeter: countPerMeter,
     });
   }, [width, height, count]);
   return (
