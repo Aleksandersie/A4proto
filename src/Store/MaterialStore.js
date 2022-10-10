@@ -140,7 +140,22 @@ export default class MaterialStore {
           "https://a4-yug.ru/wp-content/uploads/2020/10/posternaya_bumaga1-e1603802660987.jpg",
       },
     ];
-
+    this._intPrintBanner = [
+      {
+        name: "Баннер 440 гр",
+        brand: "Конфлекс",
+        id: 9,
+        description: "Стандартный баннер для печати",
+        imgLink: "https://a4-yug.ru/wp-content/uploads/2020/10/banner3.jpg",
+      },
+      {
+        name: "Литой баннер",
+        brand: "Конфлекс",
+        id: 10,
+        description: "Баннер с гладкой поверхностью",
+        imgLink: "https://a4-yug.ru/wp-content/uploads/2020/10/banner1.jpg",
+      },
+    ];
     this._selectedMaterial = {};
     this._selectedVinyl = {};
     this._selectedSpecVinyl = {};
@@ -203,5 +218,11 @@ export default class MaterialStore {
   }
   get intPrintPhotoPaper() {
     return this._intPrintPhotoPaper;
+  }
+  setIntPrintBanner(banner) {
+    this._intPrintBanner = banner;
+  }
+  get intPrintBanner() {
+    return this._intPrintBanner;
   }
 }
