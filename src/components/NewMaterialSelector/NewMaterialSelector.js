@@ -50,7 +50,22 @@ const NewMaterialSelector = observer(() => {
         </div>
         <div className="col-6">
           <div className="mt-3" style={{ textAlign: "center" }}>
-            <h5>Стандартные плёнки:</h5>
+            {/*<h5>Стандартные плёнки:</h5>*/}
+            {materialList.selectedIntPrintMaterial.name === "Плёнка" ? (
+              <h5>Стандартные плёнки:</h5>
+            ) : (
+              <div></div>
+            )}
+            {materialList.selectedIntPrintMaterial.name === "Бумага" ? (
+              <h5>Бумага:</h5>
+            ) : (
+              <div></div>
+            )}
+            {materialList.selectedIntPrintMaterial.name === "Баннер" ? (
+              <h5>Баннер:</h5>
+            ) : (
+              <div></div>
+            )}
           </div>
           <ListGroup className="ms-5 me-5">
             {materialList.selectedMaterialType.map((v) => (

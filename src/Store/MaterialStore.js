@@ -145,7 +145,7 @@ export default class MaterialStore {
     this._selectedVinyl = {};
     this._selectedSpecVinyl = {};
     this._selectedMaterialType = [];
-    this._selectedIntPrintMaterial = {}; // подсветка кнопки
+    this._selectedIntPrintMaterial = {}; // подсветка кнопки и заголовок селектора
     makeAutoObservable(this);
   }
 
